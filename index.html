@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мусульманин | المسلم</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Контейнер контента */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Шапка и переключатели */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 2em;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .lang-btn {
+            padding: 10px 25px;
+            border: none;
+            background-color: #ecf0f1;
+            color: #333;
+            cursor: pointer;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .lang-btn:hover {
+            background-color: #bdc3c7;
+        }
+
+        .lang-btn.active {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        /* Навигация по статьям */
+        nav {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            border-left: 4px solid #27ae60;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стили статей */
+        article {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        article:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.05em;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Скрытие элементов */
+        .hidden {
+            display: none;
+        }
+
+        /* Стили для арабского языка (RTL) */
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        body.rtl .container {
+            text-align: right;
+        }
+
+        body.rtl h1, 
+        body.rtl h2 {
+            font-family: 'Amiri', 'Traditional Arabic', serif; /* Предпочтительные шрифты для арабского */
+        }
+
+        body.rtl p {
+            text-align: right; /* Для арабского обычно используют выравнивание по правому краю или по ширине, но с учетом RTL */
+            font-family: 'Amiri', 'Traditional Arabic', serif;
+            font-size: 1.2em; /* Арабский шрифт часто требует чуть большего размера для читаемости */
+        }
+        
+        body.rtl nav {
+            border-left: none;
+            border-right: 4px solid #27ae60;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <!-- Заголовки меняются в зависимости от языка -->
+            <h1 id="title-ru" class="lang-content">Мусульманин</h1>
+            <h1 id="title-ar" class="lang-content hidden">المسلم</h1>
+
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLang('ru')">Русский</button>
+                <button class="lang-btn" onclick="switchLang('ar')">العربية</button>
+            </div>
+
+            <!-- Меню навигации -->
+            <nav id="nav-ru" class="lang-content">
+                <strong>Содержание:</strong>
+                <ul>
+                    <li><a href="#beliefs">Исламские убеждения</a></li>
+                    <li><a href="#wudu">Малое омовение</a></li>
+                    <li><a href="#salah">Намаз</a></li>
+                    <li><a href="#fasting">Пост в Рамадан</a></li>
+                </ul>
+            </nav>
+            <nav id="nav-ar" class="lang-content hidden">
+                <strong>المحتويات:</strong>
+                <ul>
+                    <li><a href="#beliefs">العقيدة الإسلامية</a></li>
+                    <li><a href="#wudu">الوضوء</a></li>
+                    <li><a href="#salah">الصلاة</a></li>
+                    <li><a href="#fasting">الصيام</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Статья 1: Убеждения -->
+        <article id="beliefs">
+            <div class="lang-content" id="text-beliefs-ru">
+                <h2>Исламские убеждения</h2>
+                <p>Исламские убеждения (акыда) — это фундамент веры мусульманина. Они основываются на шести столпах веры: вера в Аллаха, в Его ангелов, в Его Писания, в Его посланников, в Последний день и в предопределение (кадар) с его добром и злом. Истинная акыда требует единобожия (таухида) во всех проявлениях поклонения.</p>
+                <p>Сердце верующего должно быть убеждено в этих истинах на основе единобожия.</p>
+            </div>
+            <div class="lang-content hidden" id="text-beliefs-ar">
+                <h2>العقيدة الإسلامية</h2>
+                <p>العقيدة الإسلامية هي أساس إيمان المسلم، وتقوم على أركان الإيمان الستة: الإيمان بالله، وملائكته، وكتبه، ورسله، واليوم الآخر، والقدر خيره وشره. وتتطلب العقيدة الصحيحة تحقيق التوحيد الخالص لله في جميع أنواع العبادة.</p>
+                <p>يجب أن يكون قلب المؤمن مطمئنًا بهذه الحقائق دون شك أو ريب، فإن سلامة العقيدة هي النجاة من الشرك وهي الطريق المستقيم إلى رضوان الله.</p>
+            </div>
+        </article>
+
+        <!-- Статья 2: Омовение -->
+        <article id="wudu">
+            <div class="lang-content" id="text-wudu-ru">
+                <h2>Малое омовение</h2>
+                <p>Малое омовение — это условие для совершения намаза. Оно включает в себя последовательное мытье лица, рук до локтей, протирание головы и мытье стоп до щиколоток.</p>
+            </div>
+            <div class="lang-content hidden" id="text-wudu-ar">
+                <h2>الوضوء</h2>
+                <p>الوضوء هو شرط لصحة الصلاة، ويتضمن غسل الوجه، ثم اليدين إلى المرفقين، ثم مسح الرأس، ثم غسل القدمين إلى الكعبين. يعتبر الوضوء مفتاح الصلاة وشعاراً للطهارة المعنوية.</p>
+                <p>قال النبي محمد صلى الله عليه وسلم: "من توضأ فأحسن الوضوء خرجت خطاياه من جسده". ويجب المحافظة على الماء الطاهر وإخلاص النية عند أداء الوضوء.</p>
+            </div>
+        </article>
+
+        <!-- Статья 3: Намаз -->
+        <article id="salah">
+            <div class="lang-content" id="text-salah-ru">
+                <h2>Намаз</h2>
+                <p>Намаз (молитва) — это второй столп Ислама и важнейший вид поклонения. Мусульманин обязан совершать пять ежедневных молитв в определенное время: утреннюю, полуденную, послеполуденную, вечернюю и ночную. 
+                  Постоянное совершение молитвы смиренно и в срок является признаком веры.</p>
+            </div>
+            <div class="lang-content hidden" id="text-salah-ar">
+                <h2>الصلاة</h2>
+                <p>الصلاة هي الركن الثاني من أركان الإسلام وأهم عبادة. يجب على المسلم أداء خمس صلوات يومية في أوقاتها المحددة: الفجر، والظهر، والعصر، والمغرب، والعشاء. الصلاة هي صلة بين العبد وربه.</p>
+                <p>في الصلاة يجد المؤمن السكينة لروحه والوقاية من المعاصي. وإقامة الصلاة بخشوع وفي وقتها دليل على صدق إيمان المسلم.</p>
+            </div>
+        </article>
+
+        <!-- Статья 4: Пост -->
+        <article id="fasting">
+            <div class="lang-content" id="text-fasting-ru">
+                <h2>Пост в Рамадан</h2>
+                <p>Пост в месяц Рамадан — это четвертый столп Ислама. Он заключается в воздержании от еды, питья и супружеской близости от рассвета до заката солнца.</p>
+                <p>Кто постится с верой Рамадан тому прощяются грехи.</p>
+            </div>
+            <div class="lang-content hidden" id="text-fasting-ar">
+                <h2>الصيام</h2>
+                <p>صيام شهر رمضان هو الركن الرابع من أركان الإسلام، ويقوم على الامتناع عن الطعام والشراب والجماع من طلوع الفجر حتى غروب الشمس. وقد فرض الصيام على الأمم السابقة، وفي الإسلام جاءت صورته الكاملة.</p>
+                <p>ليس المقصود من الصيام مجرد الجوع والعطش، بل تزكية النفس وتحقيق التقوى والشعور بالفقراء والمساكين. ورمضان هو شهر القرآن وشهر المغفرة والرحمة.</p>
+            </div>
+        </article>
+
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            // Получаем все элементы с классом lang-content
+            const contents = document.querySelectorAll('.lang-content');
+            
+            // Переключаем класс hidden
+            contents.forEach(el => {
+                // Если ID элемента заканчивается на выбранный язык, показываем его
+                if (el.id.endsWith('-' + lang)) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+
+            // Меняем стили body для RTL (арабский) или LTR (русский)
+            if (lang === 'ar') {
+                document.body.classList.add('rtl');
+                document.documentElement.lang = 'ar';
+            } else {
+                document.body.classList.remove('rtl');
+                document.documentElement.lang = 'ru';
+            }
+
+            // Обновляем активную кнопку
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
